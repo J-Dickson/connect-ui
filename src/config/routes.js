@@ -8,7 +8,7 @@ const customHistory = createBrowserHistory()
 const routes = () =>
   <Router history={customHistory}>
     <div>
-  	  <Route exact path='/' component={App} />
+      <Route exact path='/' component={App} />
       <Route path='/register' component={Registration} />
     </div>
   </Router>
