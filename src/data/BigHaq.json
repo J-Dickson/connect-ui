@@ -1,0 +1,65 @@
+{
+    "users": [
+        {
+            "userName": "9031243",
+            "firstName": "Susan",
+            "city": "Landan",
+            "country": "Iceland",
+            "latlng": {
+                "lat": 48.137154,
+                "lng": 11.582000
+            },
+            "image": "abc.com"
+        },
+        {
+            "userName": "4901340",
+            "firstName": "John",
+            "city": "Liverpool",
+            "country": "China",
+            "latlng": {
+                "lat": 48.135372,
+                "lng": 11.583296
+            },
+            "image": "adfadsd.com"
+        }
+    ],
+    "places": [
+        {
+            "name": "Steve Tavern",
+            "type": "Pub",
+            "ratings": 5,
+            "latlng": {
+                "lat":48.135395,
+                "lng":11.582818
+            },
+            "meta": [
+                "food",
+                "drinks",
+                "veg friendly"
+            ], 
+            "reviews" : [
+                {
+                    "userName": "39423",
+                    "comment": "This is awesome",
+                    "ratings": 3
+                },
+                {
+                    "userName": "39423",
+                    "comment": "This is awesome",
+                    "ratings": 3
+                }
+            ]
+
+        }
+    ],
+    "mapped_users" : [
+        { "type": "User", "geometry": { "type": "Point", "coordinates": [ -151.5129, 63.1016, 0.0 ] } },
+        { "type": "User", "geometry": { "type": "Point", "coordinates": [ -151.5129, 63.1016, 0.0 ] } },
+        { "type": "User", "geometry": { "type": "Point", "coordinates": [ -151.5129, 63.1016, 0.0 ] } },
+        { "type": "User", "geometry": { "type": "Point", "coordinates": [ -151.5129, 63.1016, 0.0 ] } },
+        { "type": "User", "geometry": { "type": "Point", "coordinates": [ -151.5129, 63.1016, 0.0 ] } },
+        { "type": "User", "geometry": { "type": "Point", "coordinates": [ -151.5129, 63.1016, 0.0 ] } }
+     ]
+
+
+}
