@@ -1,20 +1,21 @@
 import React from 'react'
 import './account.css'
 import Header from './Header'
+import Selfie from '../assets/Selfie.jpg'
 
 class Account extends React.Component {
   render () {
-    // const {name, age, city}= this.props
+    // const {name, age, city, about, numberOfConnections }= this.props
     const name = 'Rachel'
     const age = '22'
     const city = 'London'
     const about = 'Lorem ipsum dolor sit amet, te dicam diceret luptatum ius, ea usu autem fuisset, prodesset efficiendi interpretaris nam eu.'
-    const numberOfConnections = '3'
+    const numberOfConnections = '0'
     return (
       <div className='account'>
         <Header />
         <div className='account__header'>
-          <Image />
+          <Image image={Selfie} />
           <div className='account__main'>
             <Info title='Name' value={name} titleClassName='account__main--title' />
             <Info title='Age' value={age} titleClassName='account__main--title' />
@@ -45,7 +46,7 @@ const Info = ({ title, value, titleClassName, textClassName = '' }) => (
 const Connections = ({ numberOfConnections, title, href, chatHref }) => (
   <div className='account__details--connections'>
     <div className='connections__title'>
-      {numberOfConnections &&
+      {numberOfConnections && numberOfConnections !== '0' &&
         <a href={chatHref} className='connections__number' >
           {numberOfConnections}
         </a>
@@ -59,9 +60,10 @@ const Connections = ({ numberOfConnections, title, href, chatHref }) => (
 )
 
 const Image = ({ image }) => (
-  <div className='account__image'>
-    {!image &&
-    <i className='fa fa-user' aria-hidden='true' />
+  <div className='account__image--container'>
+    {image
+      ? <img src={image} className='account__image' />
+      : <i className='fa fa-user' aria-hidden='true' />
     }
     <a href='#' className='camera'>
       <i className='fa fa-camera' aria-hidden='true' />
