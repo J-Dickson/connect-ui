@@ -64,8 +64,14 @@ class LocalMap extends React.Component {
       radius: value
     })
   }
-  handleChangeComplete (value) {
-    console.log('hEre', this.state.radius)
+  handleChangeComplete () {
+    Api.getPoiByRadius(this.state.radius).then(res => {
+      this.setState({
+        userList: res.data.userList,
+        poi: res.data.poiList,
+        mappedUsers: res.data.mapped_users
+      })
+    })
   }
   togglePerson () {
     this.setState(prevState => {
@@ -74,7 +80,6 @@ class LocalMap extends React.Component {
       }
     })
   }
-
   togglePOI () {
     this.setState(prevState => {
       return {
