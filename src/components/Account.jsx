@@ -10,7 +10,7 @@ class Account extends React.Component {
     const age = '28'
     const city = 'Bhaktapur'
     const about = "I am a massive Bayern Munich FC fan, but I can't find anybody else in my area to watch the games with 😞 My favourite player is Mats Hummels."
-    const numberOfConnections = '3'
+    const numberOfConnections = '26'
     const image = 'https://inmotion.adrivo.com/images/300/uploads/user/fcb/599d2866e197d_preview.jpg'
     return (
       <div className='account'>

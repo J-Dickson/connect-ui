@@ -18,6 +18,7 @@ class LocalMap extends React.Component {
     // this.handleChangeComplete = this.handleChangeComplete.bind(this)
     this.map = null
     this.state = {
+      count: null,
       userList: [],
       poi: [],
       mappedUsers: [],
@@ -45,6 +46,7 @@ class LocalMap extends React.Component {
         mappedUsers: res.data.mapped_users
       })
     })
+    setTimeout(() => this.setState({count: 1}), 10000)
   }
   componentDidUpdate (nextProps, nextState) {
     if (nextState.userList.length === this.state.userList.length && nextState.poi.length === this.state.poi.length) return
@@ -90,7 +92,7 @@ class LocalMap extends React.Component {
   render () {
     return (
       <div>
-        <Header showBurger />
+        <Header showBurger count={this.state.count} />
         <div className='container'>
           <div ref={el => this.mapContainer = el} />
           {this.state.showModal && <div className='modal'>

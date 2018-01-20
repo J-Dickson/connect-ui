@@ -15,10 +15,20 @@ class Header extends React.Component {
               <span />
               <span />
               <span />
+              {this.props.count &&
+                <div id='notification'>
+                  {this.props.count}
+                </div>
+              }
               <ul id='menu'>
                 <Link to='/connect'><a className='header__link'><i class="fa fa-home fa-fw" aria-hidden="true"></i><li>&nbsp; Connect</li></a></Link>
                 <a className='header__link'><i class="fa fa-comment-o fa-fw" aria-hidden="true"></i><li>&nbsp; Messages</li></a>
                 <Link to='/profile'><a className='header__link'><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><li>&nbsp; Profile</li></a></Link>
+                {this.props.count &&
+                  <div id='message'>
+                    {this.props.count}
+                  </div>
+                }
                 <br></br>
                 <a className='header__link'><i class="fa fa-camera fa-fw" aria-hidden="true"></i><li>&nbsp; Submit a selfie</li></a>
                 <a className='header__link'><i class="fa fa-trophy fa-fw" aria-hidden="true"></i><li>&nbsp; Competitions</li></a>
