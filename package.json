@@ -6,6 +6,7 @@
     "axios": "^0.17.1",
     "history": "^4.7.2",
     "mapbox-gl": "^0.43.0",
+    "mapbox-gl-circle": "^1.6.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-rangeslider": "^2.2.0",

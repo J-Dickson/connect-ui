@@ -26,7 +26,7 @@ class LocalMap extends React.Component {
     }
   }
   componentDidMount () {
-    this.map = MapHelper.instantiateMap(this.mapContainer)
+    this.map = MapHelper.instantiateMap(this.mapContainer, this.state.currentUser.location.geoPoint.lon, this.state.currentUser.location.geoPoint.lat)
     Api.getPoiByRadius().then(res => {
       this.setState({
         userList: res.data.userList,
@@ -40,6 +40,7 @@ class LocalMap extends React.Component {
     MapHelper.getPlaceMarkers(this.map, this.state.poi)
     MapHelper.createHeatMapSource(this.map, this.state.mappedUsers)
     MapHelper.getHeatMapLayer(this.map)
+    MapHelper.drawCircle(this.map, this.state.currentUser.location.geoPoint.lon, this.state.currentUser.location.geoPoint.lat, 2500)
   }
   componentWillUnmount () {
     this.map.remove()

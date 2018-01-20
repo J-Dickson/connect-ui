@@ -1,17 +1,26 @@
 import mapboxgl from 'mapbox-gl'
+const MapboxCircle = require('mapbox-gl-circle')
 mapboxgl.accessToken = 'pk.eyJ1IjoiamQ5MTIiLCJhIjoiY2pjbWYzbzdxMDN4YTJ5bzBrc2VvdDl6ciJ9.0Cutw6rZNaP2pY58wj1V1w'
 
 export default class MapHelper {
   static renderUserCard (name) {
     return (`<h3>${name}</h3>`)
   }
-  static instantiateMap (mapContainer) {
+  static instantiateMap (mapContainer, lon, lat) {
     return new mapboxgl.Map({
       container: mapContainer,
       style: 'mapbox://styles/mapbox/streets-v10',
-      center: [11.576124, 48.137154],
+      center: [lon, lat],
       zoom: 14
     })
+  }
+
+  static drawCircle (map, lon, lat, radius) {
+    return new MapboxCircle({lat: lat, lng: lon}, radius, {
+      editable: false,
+      minRadius: radius,
+      fillColor: '#29AB87'
+    }).addTo(map)
   }
 
   static getLatLng (latLng) {
