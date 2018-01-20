@@ -8,6 +8,34 @@
   top: 10%;
 }
 
+.btn_left {
+  margin-right: 5px;
+}
+
+.modal-name {
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+}
+
+.modal-username {
+  display: block;
+  font-size: 1.17em;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.modal-image {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
 .log-in__header {
   font-size: 45px;
   text-align: center;

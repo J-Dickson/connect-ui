@@ -15,7 +15,6 @@ class LocalMap extends React.Component {
   constructor (props) {
     super(props)
     this.mapContainer = null
-    // this.handleChangeComplete = this.handleChangeComplete.bind(this)
     this.map = null
     this.state = {
       count: null,

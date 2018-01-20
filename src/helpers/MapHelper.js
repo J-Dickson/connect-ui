@@ -1,10 +1,18 @@
 import mapboxgl from 'mapbox-gl'
+import '../components/LogIn.css'
 const MapboxCircle = require('mapbox-gl-circle')
 mapboxgl.accessToken = 'pk.eyJ1IjoiamQ5MTIiLCJhIjoiY2pjbWYzbzdxMDN4YTJ5bzBrc2VvdDl6ciJ9.0Cutw6rZNaP2pY58wj1V1w'
 
 export default class MapHelper {
   static renderUserCard (name) {
-    return (`<h3>${name}</h3>`)
+    return (`
+      <img src="//inmotion.adrivo.com/images/300/uploads/user/fcb/599d1e30bf408_preview.jpg" class='modal-image' alt="" height="65" width="65">
+      <div class='modal-name'><a class='modal-username' href='/account'>${name}</a></div>
+      <div class='buttons modal-buttons'>
+        <button class='button btn_left'><a class='button' href="/">Connect</a></button>
+        <button class='button'><a class='button' href="/account">Message</a></button>
+      </div>
+      `)
   }
   static instantiateMap (mapContainer, lon, lat) {
     return new mapboxgl.Map({
