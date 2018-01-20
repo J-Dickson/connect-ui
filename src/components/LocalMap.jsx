@@ -13,7 +13,16 @@ class LocalMap extends React.Component {
     this.state = {
       userList: [],
       poi: [],
-      mappedUsers: []
+      mappedUsers: [],
+      currentUser: {
+        location: {
+          geoPoint: {
+            lon: 11.624509900000001,
+            lat: 48.2188412
+          }
+        },
+        firstName: 'Zooby'
+      }
     }
   }
   componentDidMount () {
@@ -27,7 +36,7 @@ class LocalMap extends React.Component {
     })
   }
   componentDidUpdate (nextProps, nextState) {
-    MapHelper.getUserMarkers(this.map, this.state.userList)
+    MapHelper.getUserMarkers(this.map, this.state.userList, this.state.currentUser)
     MapHelper.getPlaceMarkers(this.map, this.state.poi)
     MapHelper.createHeatMapSource(this.map, this.state.mappedUsers)
     MapHelper.getHeatMapLayer(this.map)

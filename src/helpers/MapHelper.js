@@ -1,8 +1,10 @@
 import mapboxgl from 'mapbox-gl'
-import geojson from '../data/BigHaq'
 mapboxgl.accessToken = 'pk.eyJ1IjoiamQ5MTIiLCJhIjoiY2pjbWYzbzdxMDN4YTJ5bzBrc2VvdDl6ciJ9.0Cutw6rZNaP2pY58wj1V1w'
 
 export default class MapHelper {
+  static renderUserCard (name) {
+    return (`<h3>${name}</h3>`)
+  }
   static instantiateMap (mapContainer) {
     return new mapboxgl.Map({
       container: mapContainer,
@@ -24,21 +26,24 @@ export default class MapHelper {
     })
   }
 
-  static getUserMarkers (map, userList) {
-    userList.forEach(marker => {
-      // create a HTML element for each feature
-      let el = document.createElement('div')
-      el.className = 'fa fa-user marker'
-      let lngLat = this.getLatLng(marker.location.geoPoint)
-      if (lngLat) {
-        // make a marker for each feature and add to the map
-        new mapboxgl.Marker(el)
-        .setLngLat(lngLat)
-        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-        .setHTML(`<h3>${marker.firstName}<h3>`))
-        .addTo(map)
-      }
-    })
+  static drawMarker (map, marker, isCurrentUser = false) {
+    // create a HTML element for each feature
+    let el = document.createElement('div')
+    el.className = isCurrentUser ? 'fa fa-map-marker marker' : 'fa fa-user marker'
+    let lngLat = this.getLatLng(marker.location.geoPoint)
+    if (lngLat) {
+      // make a marker for each feature and add to the map
+      new mapboxgl.Marker(el)
+      .setLngLat(lngLat)
+      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setHTML(this.renderUserCard(marker.firstName)))
+      .addTo(map)
+    }
+  }
+
+  static getUserMarkers (map, userList, currentUser) {
+    this.drawMarker(map, currentUser, true)
+    userList.forEach(marker => this.drawMarker(map, marker))
   }
 
   static getPlaceMarkers (map, poi) {
