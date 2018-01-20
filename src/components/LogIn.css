@@ -1,0 +1,72 @@
+.log-in {
+  color: #fff;
+  text-align: center;
+}
+
+.log-in__container {
+  position: absolute;
+  top: 10%;
+}
+
+.log-in__header {
+  font-size: 45px;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fc0;
+  color: #d40511;
+}
+
+.log-in__info {
+  margin: 20px;
+}
+
+.log-in__options {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2em;
+  height: 1.5em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.log-in__input {
+  border-radius: 3px;
+  width: 50%;
+  max-width: 400px;
+  font-size: .9em;
+}
+
+.log-in__input:focus {
+  outline-color: #fc0
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.log-in__button {
+  /* width: 40%; */
+  padding: 0 30px;
+  min-width: 100px;
+  max-width: 400px;
+  font-size: 1.5em;
+  min-height: 1.5em;
+  margin: 15px;
+  border-radius: 3px;
+  background-color: #d40511;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.log-in__button:hover {
+  box-shadow: inset 0px 0px 2px #ccc;
+}
+
+/* .button--log */
