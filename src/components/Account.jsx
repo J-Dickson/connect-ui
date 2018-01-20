@@ -13,7 +13,7 @@ class Account extends React.Component {
     const image = 'https://inmotion.adrivo.com/images/300/uploads/user/fcb/599d260455943_preview.jpg'
     return (
       <div className='account'>
-        <Header />
+        <Header showBurger={true} />
         <div className='account__header'>
           <Image image={image} />
           <div className='account__main'>

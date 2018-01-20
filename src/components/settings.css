@@ -22,13 +22,13 @@
 
 .modal {
   width: 90%;
-  height: 50%;
+  height: 40%;
   position: absolute;
   bottom: 10%;
   left: 5%;
-  border: solid #0A3C64;
+  border: solid #0A3C64 1px;
   border-radius: 30px;
-  background-color: rgba(255,255,255,0.5);
+  background-color: #fc0;
 }
 
 #slider {
@@ -39,7 +39,7 @@
 
 .rangeslider-horizontal .rangeslider__fill {
   height: 100%;
-  background-color: #961432 !important;
+  background-color: #d40511 !important;
   border-radius: 10px;
   top: 0;
 }
@@ -54,6 +54,19 @@
 
 li {
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
   list-style-type: none;
+}
+
+#switches {
+  position: relative;
+  margin-top: 70px;
+}
+
+.my-switch {
+  margin-bottom: 30px;
+}
+
+.switch.on {
+  background: green;
 }

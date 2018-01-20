@@ -38,7 +38,7 @@ class LocalMap extends React.Component {
   render () {
     return (
       <div>
-        <Header />
+        <Header showBurger={true} />
         <div className='container'>
           <div ref={el => this.mapContainer = el} />
           <SettingsModal />
