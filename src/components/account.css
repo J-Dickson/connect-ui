@@ -106,8 +106,30 @@
 
 .account__details--title {
   margin: 10px 0;
+  color: #ccc;
 }
 
 .account__about {
+  line-height: 1.5em;
+  border: 1px solid #d40511;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #232323;
+  margin: 10px 0;
+}
 
+.account__edit {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  text-align: center;
+  display: block;
+  height: 1em;
+  width: 1em;
+  font-size: 2em;
+  position: relative;
+  top: calc(10% + 30px);
+  margin: 10px;
+  padding: 10px;
+  color: currentColor;
 }

@@ -8,7 +8,7 @@ class Account extends React.Component {
     const name = 'Rachel'
     const age = '22'
     const city = 'London'
-    const about = 'I like pints and crochet.'
+    const about = 'Lorem ipsum dolor sit amet, te dicam diceret luptatum ius, ea usu autem fuisset, prodesset efficiendi interpretaris nam eu.'
     const numberOfConnections = '3'
     return (
       <div className='account'>
@@ -26,6 +26,9 @@ class Account extends React.Component {
           <Connections title='Connections' href='#' chatHref='#' numberOfConnections={numberOfConnections} />
           <Connections title='Your Activity' href='#' />
         </div>
+        <a href='#' className='account__edit'>
+          <i class='fa fa-pencil' aria-hidden='true' />
+        </a>
       </div>
     )
   }
