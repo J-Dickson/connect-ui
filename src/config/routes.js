@@ -13,7 +13,7 @@ const routes = () =>
       <Route exact path='/' component={App} />
       <Route path='/register' component={Registration} />
       <Route path='/connect' component={LocalMap} />
-      <Route path='/account' component={Account} />
+      <Route path='/profile' component={Account} />
     </div>
   </Router>
 
