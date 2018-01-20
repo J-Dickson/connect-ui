@@ -1,5 +1,6 @@
 import React from 'react'
 import MapHelper from '../helpers/MapHelper'
+import Header from './Header'
 import './LocalMap.css'
 
 class LocalMap extends React.Component {
@@ -21,9 +22,17 @@ class LocalMap extends React.Component {
     this.map.remove()
   }
   render () {
+    if (this.map) {
+      this.map.on('zoomstart', () => {
+        console.log('END!')
+      })
+    }
     return (
-      <div className='container'>
-        <div ref={el => this.mapContainer = el} />
+      <div>
+        <Header />
+        <div className='container'>
+          <div ref={el => this.mapContainer = el} />
+        </div>
       </div>
     )
   }
