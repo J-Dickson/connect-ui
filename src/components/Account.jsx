@@ -8,7 +8,7 @@ class Account extends React.Component {
     const name = 'Manuel'
     const age = ''
     const city = 'Gangelt'
-    const about = 'Lorem ipsum dolor sit amet, te dicam diceret luptatum ius, ea usu autem fuisset, prodesset efficiendi interpretaris nam eu.'
+    const about = "I am a massive Bayern Munich FC fan, but I can't find anybody else in my area to watch the games with 😞 My favourite player is Mats Hummels."
     const numberOfConnections = '0'
     const image = 'https://inmotion.adrivo.com/images/300/uploads/user/fcb/599d260455943_preview.jpg'
     return (
