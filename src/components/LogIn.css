@@ -44,7 +44,7 @@
   outline-color: #fc0
 }
 
-.button {
+.buttons {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -59,14 +59,19 @@
   min-height: 1.5em;
   margin: 15px;
   border-radius: 3px;
-  background-color: #d40511;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
 }
-.log-in__button:hover {
+
+.button:hover {
   box-shadow: inset 0px 0px 2px #ccc;
+}
+
+.button {
+  background-color: #d40511;
+  color: #fff;
+  border-radius: 3px;
 }
 
 /* .button--log */

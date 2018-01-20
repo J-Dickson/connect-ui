@@ -19,16 +19,16 @@ class LogIn extends React.Component{
           </div>
           <Input title='E-mail' type='log-in' />
           <Input title='Password' type='password' />
-          <div className='button'>
-            <Link to='/connect' className='log-in__button button--log'>
+          <div className='buttons'>
+            <Link to='/connect' className='log-in__button button'>
                 Log in
             </Link>
           </div>
           Not a member yet?
-          <div className='button'>
-            <a type='submit' href='/register' className='log-in__button button--log'>
+          <div className='buttons'>
+            <Link type='submit' to='/register' className='log-in__button button'>
               Join the Family!
-            </a>
+            </Link>
           </div>
         </div>
       </div>
