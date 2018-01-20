@@ -1,0 +1,12 @@
+
+#cog {
+  position: absolute;
+  z-index: 1;
+  bottom: 10px;
+  left: 10px;
+  width: 15%;
+}
+
+#cog img {
+  width: 100%;
+}

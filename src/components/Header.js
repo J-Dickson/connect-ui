@@ -17,7 +17,7 @@ class Header extends React.Component {
             <ul id='menu'>
               <Link to='/connect'><a className='header__link'><i class="fa fa-home fa-fw" aria-hidden="true"></i><li>&nbsp; Connect</li></a></Link>
               <a className='header__link'><i class="fa fa-comment-o fa-fw" aria-hidden="true"></i><li>&nbsp; Messages</li></a>
-              <a className='header__link'><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><li>&nbsp; Profile</li></a>
+              <Link to='/profile'><a className='header__link'><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><li>&nbsp; Profile</li></a></Link>
               <br></br>
               <a className='header__link'><i class="fa fa-camera fa-fw" aria-hidden="true"></i><li>&nbsp; Submit a selfie</li></a>
               <a className='header__link'><i class="fa fa-trophy fa-fw" aria-hidden="true"></i><li>&nbsp; Competitions</li></a>

@@ -1,6 +1,7 @@
 import React from 'react'
 import MapHelper from '../helpers/MapHelper'
 import Header from './Header'
+import SettingsModal from './SettingsModal.jsx'
 import './LocalMap.css'
 
 class LocalMap extends React.Component {
@@ -32,6 +33,7 @@ class LocalMap extends React.Component {
         <Header />
         <div className='container'>
           <div ref={el => this.mapContainer = el} />
+          <SettingsModal />
         </div>
       </div>
     )
