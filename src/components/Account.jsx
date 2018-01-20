@@ -1,19 +1,20 @@
 import React from 'react'
 import './account.css'
 import Header from './Header'
+import {Link} from 'react-router-dom'
 
 class Account extends React.Component {
   render () {
     // const {name, age, city, about, numberOfConnections }= this.props
     const name = 'Roshan'
-    const age = ''
+    const age = '28'
     const city = 'Bhaktapur'
     const about = "I am a massive Bayern Munich FC fan, but I can't find anybody else in my area to watch the games with 😞 My favourite player is Mats Hummels."
-    const numberOfConnections = '0'
+    const numberOfConnections = '3'
     const image = 'https://inmotion.adrivo.com/images/300/uploads/user/fcb/599d2866e197d_preview.jpg'
     return (
       <div className='account'>
-        <Header showBurger={true} />
+        <Header showBurger />
         <div className='account__header'>
           <Image image={image} />
           <div className='account__main'>
@@ -54,7 +55,7 @@ const Connections = ({ numberOfConnections, title, href, chatHref }) => (
       <div>{title} </div>
     </div>
     <div className='connections__button'>
-      <a href={href} className='connections__link'> View </a>
+      <Link to={href} className='connections__link button'> View </Link>
     </div>
   </div>
 )
