@@ -1,6 +1,7 @@
 import React from 'react'
 import './header.css'
 import logo from '../assets/fcb-dhl-logo.png'
+import {Link} from 'react-router-dom'
 
 class Header extends React.Component {
   render () {
@@ -14,13 +15,13 @@ class Header extends React.Component {
             <span />
             <span />
             <ul id='menu'>
-              <a href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i><li>&nbsp; Connect</li></a>
-              <a href="#"><i class="fa fa-comment-o fa-fw" aria-hidden="true"></i><li>&nbsp; Messages</li></a>
-              <a href="#"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><li>&nbsp; Profile</li></a>
+              <Link to='/connect'><a className='header__link'><i class="fa fa-home fa-fw" aria-hidden="true"></i><li>&nbsp; Connect</li></a></Link>
+              <a className='header__link'><i class="fa fa-comment-o fa-fw" aria-hidden="true"></i><li>&nbsp; Messages</li></a>
+              <a className='header__link'><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><li>&nbsp; Profile</li></a>
               <br></br>
-              <a href="#"><i class="fa fa-camera fa-fw" aria-hidden="true"></i><li>&nbsp; Submit a selfie</li></a>
-              <a href="#"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i><li>&nbsp; Competitions</li></a>
-              <a href="#"><i class="fa fa-futbol-o fa-fw" aria-hidden="true"></i><li>&nbsp; FC Bayern</li></a>
+              <a className='header__link'><i class="fa fa-camera fa-fw" aria-hidden="true"></i><li>&nbsp; Submit a selfie</li></a>
+              <a className='header__link'><i class="fa fa-trophy fa-fw" aria-hidden="true"></i><li>&nbsp; Competitions</li></a>
+              <a className='header__link'><i class="fa fa-futbol-o fa-fw" aria-hidden="true"></i><li>&nbsp; FC Bayern</li></a>
             </ul>
           </div>
         </nav>

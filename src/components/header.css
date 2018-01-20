@@ -13,6 +13,7 @@ body {
   top: 0px;
   left: 0px;
   background-color: #fc0;
+  z-index: 1;
 }
 
 #logo {
@@ -27,9 +28,10 @@ body {
   height: 100%;
 }
 
-a:hover
+.header__link:hover
 {
   color: #d40511;
+  cursor: pointer;
 }
 
 #menuToggle
@@ -114,6 +116,9 @@ a:hover
 
 a {
   text-decoration: none;
+}
+
+.header__link {
   color: #232323;
   transition: color 0.3s ease;
   font-size: 30px;
