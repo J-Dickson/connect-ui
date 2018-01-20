@@ -1,5 +1,6 @@
 import React from 'react'
 import MapHelper from '../helpers/MapHelper'
+import Api from '../helpers/Api'
 import Header from './Header'
 import SettingsModal from './SettingsModal.jsx'
 import './LocalMap.css'
@@ -9,25 +10,32 @@ class LocalMap extends React.Component {
     super(props)
     this.mapContainer = null
     this.map = null
+    this.state = {
+      userList: [],
+      poi: [],
+      mappedUsers: []
+    }
   }
   componentDidMount () {
     this.map = MapHelper.instantiateMap(this.mapContainer)
-    MapHelper.getUserMarkers(this.map)
-    MapHelper.getPlaceMarkers(this.map)
-    this.map.on('style.load', () => {
-      MapHelper.createHeatMapSource(this.map)
-      MapHelper.getHeatMapLayer(this.map)
+    Api.getPoiByRadius().then(res => {
+      this.setState({
+        userList: res.data.userList,
+        poi: res.data.poiList,
+        mappedUsers: res.data.mapped_users
+      })
     })
+  }
+  componentDidUpdate (nextProps, nextState) {
+    MapHelper.getUserMarkers(this.map, this.state.userList)
+    MapHelper.getPlaceMarkers(this.map, this.state.poi)
+    MapHelper.createHeatMapSource(this.map, this.state.mappedUsers)
+    MapHelper.getHeatMapLayer(this.map)
   }
   componentWillUnmount () {
     this.map.remove()
   }
   render () {
-    if (this.map) {
-      this.map.on('zoomstart', () => {
-        console.log('END!')
-      })
-    }
     return (
       <div>
         <Header />

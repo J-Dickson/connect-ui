@@ -13,43 +13,48 @@ export default class MapHelper {
   }
 
   static getLatLng (latLng) {
-    return [latLng.lng, latLng.lat]
+    if (isNaN(latLng.lon) || isNaN(latLng.lat)) return null
+    return [parseFloat(latLng.lon), parseFloat(latLng.lat)]
   }
 
-  static createHeatMapSource (map) {
+  static createHeatMapSource (map, mappedUsers) {
     map.addSource('mapped-users', {
       'type': 'geojson',
-      'data': geojson.mapped_users
+      'data': mappedUsers
     })
   }
 
-  static getUserMarkers (map) {
-    geojson.users.forEach(marker => {
+  static getUserMarkers (map, userList) {
+    userList.forEach(marker => {
       // create a HTML element for each feature
       let el = document.createElement('div')
       el.className = 'fa fa-user marker'
-
-      // make a marker for each feature and add to the map
-      new mapboxgl.Marker(el)
-      .setLngLat(this.getLatLng(marker.latlng))
-      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-      .setHTML(`<h3>${marker.firstName}<h3>`))
-      .addTo(map)
+      let lngLat = this.getLatLng(marker.location.geoPoint)
+      if (lngLat) {
+        // make a marker for each feature and add to the map
+        new mapboxgl.Marker(el)
+        .setLngLat(lngLat)
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML(`<h3>${marker.firstName}<h3>`))
+        .addTo(map)
+      }
     })
   }
 
-  static getPlaceMarkers (map) {
-    geojson.places.forEach(marker => {
+  static getPlaceMarkers (map, poi) {
+    poi.forEach(marker => {
       // create a HTML element for each feature
       let el = document.createElement('div')
       el.className = 'fa fa-television marker'
-
-      // make a marker for each feature and add to the map
-      new mapboxgl.Marker(el)
-      .setLngLat(this.getLatLng(marker.latlng))
-      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-      .setHTML(`<h3>${marker.name}<h3>`))
-      .addTo(map)
+      let lngLat = this.getLatLng(marker.location.geoPoint)
+      if (lngLat) {
+        // make a marker for each feature and add to the map
+        new mapboxgl.Marker(el)
+        .setLngLat(lngLat)
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML(`<h3>${marker.name}<h3>`))
+        .addTo(map)
+      }
     })
   }
 
