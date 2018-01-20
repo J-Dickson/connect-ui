@@ -1,21 +1,21 @@
 import React from 'react'
 import './account.css'
 import Header from './Header'
-import Selfie from '../assets/Selfie.jpg'
 
 class Account extends React.Component {
   render () {
     // const {name, age, city, about, numberOfConnections }= this.props
-    const name = 'Rachel'
-    const age = '22'
-    const city = 'London'
+    const name = 'Manuel'
+    const age = ''
+    const city = 'Gangelt'
     const about = 'Lorem ipsum dolor sit amet, te dicam diceret luptatum ius, ea usu autem fuisset, prodesset efficiendi interpretaris nam eu.'
     const numberOfConnections = '0'
+    const image = 'https://inmotion.adrivo.com/images/300/uploads/user/fcb/599d260455943_preview.jpg'
     return (
       <div className='account'>
         <Header />
         <div className='account__header'>
-          <Image image={Selfie} />
+          <Image image={image} />
           <div className='account__main'>
             <Info title='Name' value={name} titleClassName='account__main--title' />
             <Info title='Age' value={age} titleClassName='account__main--title' />
