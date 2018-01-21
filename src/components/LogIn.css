@@ -25,6 +25,7 @@
 }
 .beer-description, .food-description, .child-description, .wifi-description, .bed-description {
   display: none;
+  cursor: pointer;
 }
 .beer, .food, .child, .bed, .wifi {
   padding: 2px;

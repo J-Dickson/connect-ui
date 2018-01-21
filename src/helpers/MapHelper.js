@@ -35,7 +35,7 @@ export default class MapHelper {
       </div>
       <div class='food'>
         <i class="fa fa-cutlery" aria-hidden="true"></i>
-        <div class='food-description'>Has Food</div>
+        <div class='food-description'>Serves Food</div>
       </div>
       <div class='child'>
         <i class="fa fa-child" aria-hidden="true"></i>
