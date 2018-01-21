@@ -1,6 +1,6 @@
 import mapboxgl from 'mapbox-gl'
 import '../components/LogIn.css'
-const MapboxCircle = require('mapbox-gl-circle')
+import MapboxCircle from 'mapbox-gl-circle'
 mapboxgl.accessToken = 'pk.eyJ1IjoiamQ5MTIiLCJhIjoiY2pjbWYzbzdxMDN4YTJ5bzBrc2VvdDl6ciJ9.0Cutw6rZNaP2pY58wj1V1w'
 
 export default class MapHelper {
@@ -19,7 +19,7 @@ export default class MapHelper {
       container: mapContainer,
       style: 'mapbox://styles/mapbox/streets-v10',
       center: [lon, lat],
-      zoom: 14
+      zoom: 11
     })
   }
 
