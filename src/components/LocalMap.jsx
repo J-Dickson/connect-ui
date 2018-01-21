@@ -29,7 +29,7 @@ class LocalMap extends React.Component {
           }
         },
         firstName: 'David',
-        image: '//inmotion.adrivo.com/images/300/uploads/user/fcb/599d256c926ba_preview.jpg'
+        image: '//inmotion.adrivo.com/images/300/uploads/user/fcb/599c4d7c0b6ba_preview.jpg'
       },
       showModal: false,
       radius: 5,

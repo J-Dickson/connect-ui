@@ -11,7 +11,7 @@ class Account extends React.Component {
     const city = 'New York'
     const about = "I am a massive Bayern Munich FC fan, but I can't find anybody else in my area to watch the games with 😞. Please connect and message."
     const numberOfConnections = '26'
-    const image = '//inmotion.adrivo.com/images/300/uploads/user/fcb/599d256c926ba_preview.jpg'
+    const image = '//inmotion.adrivo.com/images/300/uploads/user/fcb/599c4d7c0b6ba_preview.jpg'
     return (
       <div className='account'>
         <Header showBurger />
