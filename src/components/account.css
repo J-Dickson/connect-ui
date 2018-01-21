@@ -139,6 +139,9 @@
   margin: 10px;
   padding: 10px;
   color: currentColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .account__settings {
@@ -156,4 +159,7 @@
   margin: 10px;
   padding: 10px;
   color: currentColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
