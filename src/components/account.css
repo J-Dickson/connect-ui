@@ -106,11 +106,8 @@
 }
 
 .connections__link {
-  border-radius: 3px;
   text-decoration: none;
-  color: #232323;
   padding: 10px 20px;
-  background-color: #ccc;
   font-size: 100%;
 }
 

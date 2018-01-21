@@ -6,12 +6,12 @@ import {Link} from 'react-router-dom'
 class Account extends React.Component {
   render () {
     // const {name, age, city, about, numberOfConnections }= this.props
-    const name = 'Roshan'
+    const name = 'David'
     const age = '28'
-    const city = 'Bhaktapur'
-    const about = "I am a massive Bayern Munich FC fan, but I can't find anybody else in my area to watch the games with 😞 My favourite player is Mats Hummels."
+    const city = 'New York'
+    const about = "I am a massive Bayern Munich FC fan, but I can't find anybody else in my area to watch the games with 😞. Please connect and message."
     const numberOfConnections = '26'
-    const image = 'https://inmotion.adrivo.com/images/300/uploads/user/fcb/599d2866e197d_preview.jpg'
+    const image = '//inmotion.adrivo.com/images/300/uploads/user/fcb/599d256c926ba_preview.jpg'
     return (
       <div className='account'>
         <Header showBurger />
