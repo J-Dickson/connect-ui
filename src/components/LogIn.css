@@ -20,6 +20,45 @@
 .place-name {
   width: 150px;
 }
+.attributes {
+  display: flex;
+}
+.beer-description, .food-description, .child-description, .wifi-description, .bed-description {
+  display: none;
+}
+.beer, .food, .child, .bed, .wifi {
+  padding: 2px;
+}
+.beer:hover .beer-description{
+  display: block;
+}
+.beer:hover .fa-beer{
+  display: none;
+}
+.food:hover .food-description{
+  display: block;
+}
+.food:hover .fa-cutlery{
+  display: none;
+}
+.child:hover .child-description{
+  display: block;
+}
+.child:hover .fa-child{
+  display: none;
+}
+.bed:hover .bed-description{
+  display: block;
+}
+.bed:hover .fa-bed{
+  display: none;
+}
+.wifi:hover .wifi-description{
+  display: block;
+}
+.wifi:hover .fa-wifi{
+  display: none;
+}
 .modal-username {
   display: block;
   font-size: 1.17em;

@@ -28,11 +28,28 @@ export default class MapHelper {
         <i class="fa fa-star-half-o star--half" aria-hidden="true"></i>
         <i class="fa fa-star-o star--empty" aria-hidden="true"></i>
       </div>
-      <i class="fa fa-beer" aria-hidden="true"></i>
-      <i class="fa fa-cutlery" aria-hidden="true"></i>
-      <i class="fa fa-child" aria-hidden="true"></i>
-      <i class="fa fa-wifi" aria-hidden="true"></i>
-      <i class="fa fa-bed" aria-hidden="true"></i>
+      <div class='attributes'>
+      <div class='beer'>
+        <i class="fa fa-beer" aria-hidden="true"></i>
+        <div class='beer-description'>Serves Beer</div>
+      </div>
+      <div class='food'>
+        <i class="fa fa-cutlery" aria-hidden="true"></i>
+        <div class='food-description'>Has Food</div>
+      </div>
+      <div class='child'>
+        <i class="fa fa-child" aria-hidden="true"></i>
+        <div class='child-description'> Child Friendly </div>
+      </div>
+      <div class='wifi'>
+        <i class="fa fa-wifi" aria-hidden="true"></i>
+        <div class='wifi-description'>Free Wifi </div>
+      </div>
+      <div class='bed'>
+        <i class="fa fa-bed" aria-hidden="true"></i>
+        <div class='bed-description'>Rooms Available </div>
+      </div>
+      </div>
       <div> Opening Times: 10:00am-03:00am
       <div class='buttons modal-buttons'>
         <button class='button btn_left'><a class='button' href="#">Website</a></button>
