@@ -35,7 +35,7 @@ class Messages extends React.Component {
           <div className='chat-messages'>
             <SpeechBubble direction='to' message='Hey mate. Watching the game later?' />
             { this.state.count > 0 && <SpeechBubble direction='from' message='Of course 😀⚽️🇩🇪' /> }
-            { this.state.count > 1 && <SpeechBubble direction='from' message='Going to the Irish pub 🍺 Come along.' /> }
+            { this.state.count > 1 && <SpeechBubble direction='from' message='Going to the Irish bar 🍺 Come along.' /> }
             { this.state.count > 2 && <SpeechBubble direction='from' message='Mia san mia!' /> }
             { this.state.count === 3 && <img id='message-pending' src={pending} /> }
             { this.state.count > 3 && <SpeechBubble direction='to' message='Great. See you there!' /> }

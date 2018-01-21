@@ -20,7 +20,7 @@ class LogIn extends React.Component{
           <Input title='E-mail' type='log-in' />
           <Input title='Password' type='password' />
           <div className='buttons'>
-            <Link to='/connect' className='log-in__button button'>
+            <Link to='/profile' className='log-in__button button'>
                 Log in
             </Link>
           </div>

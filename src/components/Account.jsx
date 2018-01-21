@@ -31,6 +31,9 @@ class Account extends React.Component {
         <a href='#' className='account__edit'>
           <i class='fa fa-pencil' aria-hidden='true' />
         </a>
+        <a href='#' className='account__settings'>
+          <i class='fa fa-cog' aria-hidden='true' />
+        </a>
       </div>
     )
   }
