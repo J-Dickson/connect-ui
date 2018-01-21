@@ -40,7 +40,6 @@ class LocalMap extends React.Component {
   componentDidMount () {
     this.map = MapHelper.instantiateMap(this.mapContainer, this.state.currentUser.location.geoPoint.lon, this.state.currentUser.location.geoPoint.lat)
     this.makeServiceCall(this.state.radius, this.state.currentUser.location.geoPoint)
-    // setTimeout(() => this.setState({count: 1}), 100)
   }
   componentDidUpdate (nextProps, nextState) {
     if (nextState.userList.length === this.state.userList.length && nextState.poi.length === this.state.poi.length) return
