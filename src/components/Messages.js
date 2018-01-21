@@ -16,10 +16,12 @@ class Messages extends React.Component {
           <SpeechBubble direction='to' />
           <SpeechBubble direction='from' />
           <div className='messages__text-input'>
-            <div className='chat-add'><i class='fa fa-plus' aria-hidden='true' /></div>
+            <a href='#' className='chat-add'><i class='fa fa-plus' aria-hidden='true' /></a>
             <textarea type='text' className='chat-input' />
-            <img src={smiley} className='smiley' />
-            <div className='chat-send' />
+            <div className='input-right'>
+              <a href='#'><img src={smiley} className='smiley' /></a>
+              <a href='#' className='chat-send'>Send</a>
+            </div>
           </div>
         </div>
       </div>

@@ -51,7 +51,7 @@
   padding: 5px;
   border-radius: 5px;
   font-size: 20px;
-  width: 60vw;
+  width: 55vw;
   margin: 10px;
   word-break: break-word;
   resize: none;
@@ -68,10 +68,28 @@
   justify-content: center;
   align-items: center;
   margin: 10px;
+  color: currentColor;
+}
+
+.input-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .smiley {
-  height: 2em;
-  width: 2em;
-  padding: 10px;
+  height: 1.6em;
+  width: 1.6em;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.chat-send {
+  background-color: #fc0;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-right: 5px;
+  color: #d40511;
 }
