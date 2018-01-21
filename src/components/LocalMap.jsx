@@ -24,41 +24,49 @@ class LocalMap extends React.Component {
       currentUser: {
         location: {
           geoPoint: {
-            lon: 11.624509900000001,
-            lat: 48.2188412
+            lon: -73.935242,
+            lat: 40.730610
           }
         },
-        firstName: 'Zooby'
+        firstName: 'David',
+        image: '//inmotion.adrivo.com/images/300/uploads/user/fcb/599d256c926ba_preview.jpg'
       },
       showModal: false,
-      radius: 10,
+      radius: 5,
       personSwitch: true,
       POIswitch: true
     }
   }
   componentDidMount () {
     this.map = MapHelper.instantiateMap(this.mapContainer, this.state.currentUser.location.geoPoint.lon, this.state.currentUser.location.geoPoint.lat)
-    Api.getPoiByRadius().then(res => {
-      this.setState({
-        userList: res.data.userList,
-        poi: res.data.poiList,
-        mappedUsers: res.data.mapped_users
-      })
-    })
-    setTimeout(() => this.setState({count: 1}), 10000)
+    this.makeServiceCall(this.state.radius, this.state.currentUser.location.geoPoint)
+    // setTimeout(() => this.setState({count: 1}), 100)
   }
   componentDidUpdate (nextProps, nextState) {
     if (nextState.userList.length === this.state.userList.length && nextState.poi.length === this.state.poi.length) return
+    MapHelper.drawCircle(this.map, this.state.currentUser.location.geoPoint.lon, this.state.currentUser.location.geoPoint.lat, (this.state.radius * 1000))
     MapHelper.getUserMarkers(this.map, this.state.userList, this.state.currentUser)
     MapHelper.getPlaceMarkers(this.map, this.state.poi)
     if (!this.map.getSource('mapped-users')) {
       MapHelper.createHeatMapSource(this.map, this.state.mappedUsers)
     }
     MapHelper.getHeatMapLayer(this.map)
-    MapHelper.drawCircle(this.map, this.state.currentUser.location.geoPoint.lon, this.state.currentUser.location.geoPoint.lat, 2500)
   }
   componentWillUnmount () {
     this.map.remove()
+  }
+  makeServiceCall (radius = 200, lonLat) {
+    Api.getPoiByRadius(radius, lonLat).then(res => {
+      this.setState({
+        userList: res.data.userList,
+        poi: res.data.poiList,
+        mappedUsers: res.data.mapped_users
+      })
+    })
+  }
+  setMapZoom () {
+    this.map.setZoom(10)
+    setTimeout(() => this.setState({count: 1}), 2000)
   }
   handleOnChange (value, that) {
     that.setState({
@@ -66,13 +74,14 @@ class LocalMap extends React.Component {
     })
   }
   handleChangeComplete () {
-    Api.getPoiByRadius(this.state.radius).then(res => {
-      this.setState({
-        userList: res.data.userList,
-        poi: res.data.poiList,
-        mappedUsers: res.data.mapped_users
-      })
+    MapHelper.removeAllMarkers()
+    MapHelper.removeAllPoiMarkers()
+    MapHelper.removeMapRadius()
+    this.setMapZoom()
+    this.setState({
+      showModal: false
     })
+    this.makeServiceCall(this.state.radius, this.state.currentUser.location.geoPoint)
   }
   togglePerson () {
     this.setState(prevState => {

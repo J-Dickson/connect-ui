@@ -2,11 +2,14 @@ import mapboxgl from 'mapbox-gl'
 import '../components/LogIn.css'
 import MapboxCircle from 'mapbox-gl-circle'
 mapboxgl.accessToken = 'pk.eyJ1IjoiamQ5MTIiLCJhIjoiY2pjbWYzbzdxMDN4YTJ5bzBrc2VvdDl6ciJ9.0Cutw6rZNaP2pY58wj1V1w'
+const markersOnMap = []
+const poiMarkersOnMap = []
+let mapRadius = null
 
 export default class MapHelper {
-  static renderUserCard (name) {
+  static renderUserCard (name, userImage) {
     return (`
-      <img src="//inmotion.adrivo.com/images/300/uploads/user/fcb/599d1e30bf408_preview.jpg" class='modal-image' alt="" height="65" width="65">
+      <img src="${userImage}" class='modal-image' alt="" height="65" width="65">
       <div class='modal-name'><a class='modal-username' href='/account'>${name}</a></div>
       <div class='buttons modal-buttons'>
         <button class='button btn_left'><a class='button' href="/">Connect</a></button>
@@ -24,11 +27,16 @@ export default class MapHelper {
   }
 
   static drawCircle (map, lon, lat, radius) {
-    return new MapboxCircle({lat: lat, lng: lon}, radius, {
+    mapRadius = new MapboxCircle({lat: lat, lng: lon}, radius, {
       editable: false,
       minRadius: radius,
       fillColor: '#29AB87'
-    }).addTo(map)
+    })
+    mapRadius.addTo(map)
+  }
+
+  static removeMapRadius () {
+    mapRadius.remove()
   }
 
   static getLatLng (latLng) {
@@ -50,12 +58,26 @@ export default class MapHelper {
     let lngLat = this.getLatLng(marker.location.geoPoint)
     if (lngLat) {
       // make a marker for each feature and add to the map
-      new mapboxgl.Marker(el)
-      .setLngLat(lngLat)
-      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-      .setHTML(this.renderUserCard(marker.firstName)))
-      .addTo(map)
+      let markerForMap = new mapboxgl.Marker(el)
+      markerForMap.setLngLat(lngLat)
+      markerForMap.setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(this.renderUserCard(marker.firstName, marker.image)))
+      markerForMap.addTo(map)
+      markersOnMap.push(markerForMap)
     }
+  }
+
+  static removeAllMarkers () {
+    markersOnMap.forEach(marker => {
+      marker.remove()
+    })
+    markersOnMap.length = 0
+  }
+
+  static removeAllPoiMarkers () {
+    poiMarkersOnMap.forEach(marker => {
+      marker.remove()
+    })
+    poiMarkersOnMap.length = 0
   }
 
   static getUserMarkers (map, userList, currentUser) {
@@ -71,11 +93,11 @@ export default class MapHelper {
       let lngLat = this.getLatLng(marker.location.geoPoint)
       if (lngLat) {
         // make a marker for each feature and add to the map
-        new mapboxgl.Marker(el)
-        .setLngLat(lngLat)
-        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-        .setHTML(`<h3>${marker.name}<h3>`))
-        .addTo(map)
+        let mapMarker = new mapboxgl.Marker(el)
+        mapMarker.setLngLat(lngLat)
+        mapMarker.setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`<h3>${marker.name}<h3>`))
+        mapMarker.addTo(map)
+        poiMarkersOnMap.push(mapMarker)
       }
     })
   }
