@@ -10,8 +10,8 @@
   top: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  height: calc( 100vh - 10%);
+  justify-content: space-between;
+  height: calc( 90vh - 10%);
 }
 
 .speech-bubble {
@@ -45,6 +45,21 @@
   justify-content: space-around;
   align-items: center;
   background-color: #fff;
+}
+
+.chat-title {
+  padding-left: 20px;
+  margin-top: 65px;
+  color: black;
+  padding-top: 5px;
+  margin-bottom: calc( -10vh);
+  font-size: 20px;
+}
+
+.chat-title span {
+  color: grey;
+  font-size: 15px;
+  padding-left: 10px;
 }
 
 .chat-input {
@@ -102,4 +117,20 @@
   border-radius: 3px;
   margin-right: 5px;
   color: #d40511;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+}
+
+#message-pending {
+  width: 200px;
+}
+
+.chat-img {
+  display: inline;
+  width: 40px;
+  margin-top: 14px;
+  border-radius: 50%;
 }
