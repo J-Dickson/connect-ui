@@ -1,7 +1,6 @@
 import React from 'react'
 import './Messages.css'
 import Header from './Header.js'
-import smiley from '../assets/smiley.png'
 
 class Messages extends React.Component {
   render () {
@@ -19,7 +18,7 @@ class Messages extends React.Component {
             <a href='#' className='chat-add'><i class='fa fa-plus' aria-hidden='true' /></a>
             <textarea type='text' className='chat-input' />
             <div className='input-right'>
-              <a href='#'><img src={smiley} className='smiley' /></a>
+              <a href='#' className='smiley'><i class='fa fa-smile-o' aria-hidden='true' /></a>
               <a href='#' className='chat-send'>Send</a>
             </div>
           </div>
