@@ -22,7 +22,7 @@ class Header extends React.Component {
               }
               <ul id='menu'>
                 <Link to='/connect'><a className='header__link'><i class="fa fa-home fa-fw" aria-hidden="true"></i><li>&nbsp; Connect</li></a></Link>
-                <a className='header__link'><i class="fa fa-comment-o fa-fw" aria-hidden="true"></i><li>&nbsp; Messages</li></a>
+                <Link to='/messages'><a className='header__link'><i class="fa fa-comment-o fa-fw" aria-hidden="true"></i><li>&nbsp; Messages</li></a></Link>
                 <Link to='/profile'><a className='header__link'><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><li>&nbsp; Profile</li></a></Link>
                 {this.props.count &&
                   <div id='message'>

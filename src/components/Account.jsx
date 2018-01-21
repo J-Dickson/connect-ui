@@ -48,9 +48,9 @@ const Connections = ({ numberOfConnections, title, href, chatHref }) => (
   <div className='account__details--connections'>
     <div className='connections__title'>
       {numberOfConnections && numberOfConnections !== '0' &&
-        <a href={chatHref} className='connections__number' >
+        <Link to={chatHref} className='connections__number' >
           {numberOfConnections}
-        </a>
+        </Link>
       }
       <div>{title} </div>
     </div>

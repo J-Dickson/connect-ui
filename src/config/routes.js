@@ -6,6 +6,7 @@ import Registration from '../components/Registration'
 import LocalMap from '../components/LocalMap.jsx'
 import Account from '../components/Account.jsx'
 import LogIn from '../components/LogIn.jsx'
+import Messages from '../components/Messages.js'
 const customHistory = createBrowserHistory()
 
 const routes = () =>
@@ -16,6 +17,7 @@ const routes = () =>
       <Route path='/connect' component={LocalMap} />
       <Route path='/profile' component={Account} />
       <Route path='/log-in' component={LogIn} />
+      <Route path='/messages' component={Messages} />
     </div>
   </Router>
 
