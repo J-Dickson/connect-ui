@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl'
+
 import '../components/LogIn.css'
 import MapboxCircle from 'mapbox-gl-circle'
 mapboxgl.accessToken = 'pk.eyJ1IjoiamQ5MTIiLCJhIjoiY2pjbWYzbzdxMDN4YTJ5bzBrc2VvdDl6ciJ9.0Cutw6rZNaP2pY58wj1V1w'
@@ -14,6 +15,27 @@ export default class MapHelper {
       <div class='buttons modal-buttons'>
         <button class='button btn_left'><a class='button' href="/">Connect</a></button>
         <button class='button'><a class='button' href="/account">Message</a></button>
+      </div>
+      `)
+  }
+  static renderPlaceCard (name, ratings) {
+    return (`
+      <div class='modal-name place-name'><a class='modal-username modal-placename' href='#'>${name}</a></div>
+      <div className='star-ratings'>
+        <i class="fa fa-star star--full" aria-hidden="true"></i>
+        <i class="fa fa-star star--full" aria-hidden="true"></i>
+        <i class="fa fa-star star--full" aria-hidden="true"></i>
+        <i class="fa fa-star-half-o star--half" aria-hidden="true"></i>
+        <i class="fa fa-star-o star--empty" aria-hidden="true"></i>
+      </div>
+      <i class="fa fa-beer" aria-hidden="true"></i>
+      <i class="fa fa-cutlery" aria-hidden="true"></i>
+      <i class="fa fa-child" aria-hidden="true"></i>
+      <i class="fa fa-wifi" aria-hidden="true"></i>
+      <i class="fa fa-bed" aria-hidden="true"></i>
+      <div> Opening Times: 10:00am-03:00am
+      <div class='buttons modal-buttons'>
+        <button class='button btn_left'><a class='button' href="#">Website</a></button>
       </div>
       `)
   }
@@ -95,7 +117,7 @@ export default class MapHelper {
         // make a marker for each feature and add to the map
         let mapMarker = new mapboxgl.Marker(el)
         mapMarker.setLngLat(lngLat)
-        mapMarker.setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`<h3>${marker.name}<h3>`))
+        mapMarker.setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(this.renderPlaceCard(marker.name, marker.rating)))
         mapMarker.addTo(map)
         poiMarkersOnMap.push(mapMarker)
       }

@@ -17,7 +17,9 @@
   width: 100px;
   text-align: center;
 }
-
+.place-name {
+  width: 150px;
+}
 .modal-username {
   display: block;
   font-size: 1.17em;
@@ -28,6 +30,17 @@
   font-weight: bold;
   color: inherit;
   text-decoration: inherit;
+}
+.modal-placename {
+  margin: 0;
+}
+
+.star-ratings {
+  padding: 5px;
+}
+
+.star--full, .star--half, .star--empty {
+  color: #fc0;
 }
 
 .modal-image {

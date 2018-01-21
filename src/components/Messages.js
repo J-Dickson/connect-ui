@@ -8,12 +8,13 @@ class Messages extends React.Component {
       <div className='messages'>
         <Header showBurger />
         <div className='messages__main'>
-
+          <div className='chat-messages'>
           <SpeechBubble direction='from' />
           <SpeechBubble direction='to' />
           <SpeechBubble direction='to' />
           <SpeechBubble direction='to' />
           <SpeechBubble direction='from' />
+        </div>
           <div className='messages__text-input'>
             <a href='#' className='chat-add'><i class='fa fa-plus' aria-hidden='true' /></a>
             <textarea type='text' className='chat-input' />
@@ -30,7 +31,7 @@ class Messages extends React.Component {
 
 const SpeechBubble = ({direction}) => (
   <div className={`speech-bubble speech-bubble--${direction}`}>
-    Good Chat uao;fbao o;qg o;qrg ;jbea jba j ja eni aernoae p
+    Good Chat ua
   </div>
 )
 
