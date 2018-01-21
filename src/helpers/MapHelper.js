@@ -1,7 +1,7 @@
 import mapboxgl from 'mapbox-gl'
 
 import '../components/LogIn.css'
-import MapboxCircle from 'mapbox-gl-circle'
+import MapboxCircle from 'mapbox-gl-circle/dist/mapbox-gl-circle.min.js'
 mapboxgl.accessToken = 'pk.eyJ1IjoiamQ5MTIiLCJhIjoiY2pjbWYzbzdxMDN4YTJ5bzBrc2VvdDl6ciJ9.0Cutw6rZNaP2pY58wj1V1w'
 const markersOnMap = []
 const poiMarkersOnMap = []
