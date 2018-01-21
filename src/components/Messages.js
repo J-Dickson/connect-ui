@@ -15,7 +15,6 @@ class Messages extends React.Component {
     e.preventDefault()
     const chat = that.refs.chat
     chat.value = ''
-    console.log(this.state.count)
     if (this.state.count === 2) {
       this.setState({count: this.state.count + 1})
       setTimeout(() => this.setState({count: this.state.count + 1}), 2000)
